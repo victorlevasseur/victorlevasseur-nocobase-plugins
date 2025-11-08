@@ -1,0 +1,50 @@
+{
+  "name": "@vltech/nocobase-plugins",
+  "private": true,
+  "workspaces": [
+    "packages/*/*",
+    "packages/*/*/*"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "nocobase": "nocobase",
+    "pm": "nocobase pm",
+    "pm2": "nocobase pm2",
+    "dev": "nocobase dev",
+    "start": "nocobase start",
+    "clean": "nocobase clean",
+    "build": "nocobase build",
+    "test": "nocobase test",
+    "e2e": "nocobase e2e",
+    "tar": "nocobase tar",
+    "postinstall": "nocobase postinstall",
+    "lint": "eslint ."
+  },
+  "resolutions": {
+    "cytoscape": "3.28.0",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "^18.0.0",
+    "react-router-dom": "6.28.1",
+    "react-router": "6.28.1",
+    "antd": "5.24.2",
+    "async": "^3.2.6",
+    "rollup": "4.24.0",
+    "semver": "^7.7.1"
+  },
+  "dependencies": {
+    "pm2": "^6.0.5",
+    "mysql2": "^3.14.0",
+    "mariadb": "^2.5.6",
+    "pg": "^8.14.1",
+    "pg-hstore": "^2.3.4",
+    "@nocobase/cli": "1.9.0",
+    "antd-mobile": "^5.41.1",
+    "antd-mobile-icons": "^0.3.0"
+  },
+  "devDependencies": {
+    "@nocobase/devtools": "1.9.0"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

@@ -1,0 +1,22 @@
+version: '3'
+
+networks:
+  nocobase:
+    driver: bridge
+
+services:
+  # If using an existing database server, postgres service can be omitted
+  postgres:
+    image: postgres:16
+    restart: always
+    command: postgres -c wal_level=logical
+    environment:
+      POSTGRES_USER: nocobase
+      POSTGRES_DB: nocobase
+      POSTGRES_PASSWORD: nocobase
+    volumes:
+      - ./storage/db:/var/lib/postgresql/data
+    networks:
+      - nocobase
+    ports:
+      - "5432:5432"

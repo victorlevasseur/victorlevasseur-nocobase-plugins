@@ -1,0 +1,15 @@
+{
+  "Duplicate Record": "Duplicate Record",
+  "Duplicate a record from a collection with all its fields and belongsTo relations": "Duplicate a record from a collection with all its fields and belongsTo relations",
+  "Collection": "Collection",
+  "Source Record ID": "Source Record ID",
+  "ID of the record to duplicate (uses previous node result if empty)": "ID of the record to duplicate (uses previous node result if empty)",
+  "Override Fields": "Override Fields",
+  "Fields to override with custom values instead of duplicating": "Fields to override with custom values instead of duplicating",
+  "Field name": "Field name",
+  "New value": "New value",
+  "Add Field Override": "Add Field Override",
+  "Continue on error": "Continue on error",
+  "Continue workflow execution even if duplication fails": "Continue workflow execution even if duplication fails",
+  "Select a collection": "Select a collection"
+}

@@ -1,0 +1,15 @@
+{
+  "Duplicate Record": "Dupliquer un enregistrement",
+  "Duplicate a record from a collection with all its fields and belongsTo relations": "Dupliquer un enregistrement d'une collection avec tous ses champs et relations belongsTo",
+  "Collection": "Collection",
+  "Source Record ID": "ID de l'enregistrement source",
+  "ID of the record to duplicate (uses previous node result if empty)": "ID de l'enregistrement à dupliquer (utilise le résultat du nœud précédent si vide)",
+  "Override Fields": "Champs à remplacer",
+  "Fields to override with custom values instead of duplicating": "Champs à remplacer avec des valeurs personnalisées au lieu de les dupliquer",
+  "Field name": "Nom du champ",
+  "New value": "Nouvelle valeur",
+  "Add Field Override": "Ajouter un remplacement de champ",
+  "Continue on error": "Continuer en cas d'erreur",
+  "Continue workflow execution even if duplication fails": "Continuer l'exécution du workflow même si la duplication échoue",
+  "Select a collection": "Sélectionner une collection"
+}

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@@/*": [
+        ".dumi/tmp/*"
+      ],
+      "@vltech/nocobase-plugin-workflow-duplicate-record/client": [
+        "packages/plugins/@vltech/nocobase-plugin-workflow-duplicate-record/src/client"
+      ],
+      "@vltech/nocobase-plugin-workflow-duplicate-record/package.json": [
+        "packages/plugins/@vltech/nocobase-plugin-workflow-duplicate-record/package.json"
+      ],
+      "@vltech/nocobase-plugin-workflow-duplicate-record": [
+        "packages/plugins/@vltech/nocobase-plugin-workflow-duplicate-record/src"
+      ]
+    }
+  }
+}
