@@ -1,7 +1,37 @@
 {
   "name": "@vltech/nocobase-plugin-workflow-duplicate-record",
   "version": "0.1.0",
+  "description": "NocoBase workflow plugin that adds a Duplicate Record instruction for duplicating records with field overrides",
+  "license": "MIT",
   "main": "dist/server/index.js",
+  "private": false,
+  "author": "VLTech",
+  "keywords": [
+    "nocobase",
+    "nocobase-plugin",
+    "workflow",
+    "duplicate",
+    "record",
+    "clone"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victorlevasseur/vltech-nocobase-plugins.git",
+    "directory": "packages/plugins/@vltech/nocobase-plugin-workflow-duplicate-record"
+  },
+  "files": [
+    "dist",
+    "client.d.ts",
+    "client.js",
+    "server.d.ts",
+    "server.js",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "dependencies": {},
   "peerDependencies": {
     "@nocobase/client": "1.x",

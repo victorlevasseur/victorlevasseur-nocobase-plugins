@@ -179,6 +179,91 @@ APP_KEY=your-secret-key          # Secret key for encryption
 API_BASE_URL=http://localhost:13000
 ```
 
+### Publishing
+
+This repository uses [semantic-release](https://semantic-release.gitbook.io/) with [@rimac-technology/semantic-release-monorepo](https://www.npmjs.com/package/@rimac-technology/semantic-release-monorepo) for automated versioning and publishing.
+
+#### How It Works
+
+- Packages are **automatically published to npm** when changes are pushed to the `main` branch
+- Each package has **independent versioning** based on its own commit history
+- **Only packages with relevant changes are published** - semantic-release analyzes commits that modify files in each package directory
+- Version numbers are determined by [Conventional Commits](https://www.conventionalcommits.org/)
+- CHANGELOG.md files are automatically generated
+
+**Example:** If you modify only files in `packages/plugins/@vltech/nocobase-plugin-workflow-duplicate-record/`, only that package will be published. Other packages remain unchanged.
+
+#### Commit Message Convention
+
+Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
+
+```
+<type>(<scope>): <subject>
+
+[optional body]
+
+[optional footer]
+```
+
+**Types that trigger releases:**
+
+- `feat:` - A new feature (triggers a **minor** version bump, e.g., 1.0.0 → 1.1.0)
+- `fix:` - A bug fix (triggers a **patch** version bump, e.g., 1.0.0 → 1.0.1)
+- `perf:` - Performance improvement (triggers a **patch** version bump)
+
+**Breaking changes:**
+
+- Add `BREAKING CHANGE:` in the commit footer or use `!` after the type (triggers a **major** version bump, e.g., 1.0.0 → 2.0.0)
+
+**Types that do NOT trigger releases:**
+
+- `docs:` - Documentation changes
+- `chore:` - Maintenance tasks
+- `style:` - Code style changes
+- `refactor:` - Code refactoring
+- `test:` - Adding tests
+- `ci:` - CI/CD changes
+
+**Examples:**
+
+```bash
+# Triggers a patch release (1.0.0 → 1.0.1)
+git commit -m "fix(duplicate-record): handle null values in field overrides"
+
+# Triggers a minor release (1.0.0 → 1.1.0)
+git commit -m "feat(duplicate-record): add support for deep cloning relations"
+
+# Triggers a major release (1.0.0 → 2.0.0)
+git commit -m "feat(duplicate-record)!: change API to use async handlers
+
+BREAKING CHANGE: The duplicate() method is now async and returns a Promise"
+
+# No release triggered
+git commit -m "docs(duplicate-record): update README with examples"
+```
+
+#### Scope
+
+Use the package name (without the full prefix) as the scope:
+
+- `duplicate-record` for `@vltech/nocobase-plugin-workflow-duplicate-record`
+- `your-plugin` for future plugins
+
+**Note:** The scope is primarily for **readability and organization** of commits. Semantic-release determines which packages to publish based on the **files modified** in the commit, not the scope. However, using consistent scopes makes the commit history much clearer.
+
+#### Setup for Publishing
+
+Before the automated publishing can work, you need to:
+
+1. **Add NPM_TOKEN secret** to your GitHub repository:
+   - Generate an npm access token with publish permissions
+   - Add it as a secret named `NPM_TOKEN` in GitHub repository settings
+   - For trusted publishing, configure the npm package with GitHub OIDC
+
+2. **Ensure GitHub Actions has write permissions**:
+   - Go to repository Settings → Actions → General
+   - Under "Workflow permissions", select "Read and write permissions"
+
 ### Contributing
 
 When developing plugins for this repository:
@@ -188,7 +273,8 @@ When developing plugins for this repository:
 3. Update plugin README files with usage examples
 4. Use TypeScript for type safety
 5. Follow NocoBase plugin development guidelines
-6. Test your plugin thoroughly before committing
+6. **Use Conventional Commits** for all commit messages (see Publishing section above)
+7. Test your plugin thoroughly before committing
 
 ### Resources
 

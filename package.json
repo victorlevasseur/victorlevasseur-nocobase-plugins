@@ -5,6 +5,10 @@
     "packages/*/*",
     "packages/*/*/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victorlevasseur/vltech-nocobase-plugins.git"
+  },
   "engines": {
     "node": ">=18"
   },
@@ -44,7 +48,15 @@
     "antd-mobile-icons": "^0.3.0"
   },
   "devDependencies": {
-    "@nocobase/devtools": "1.9.0"
+    "@nocobase/devtools": "1.9.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.0",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.1",
+    "multi-semantic-release": "^3.0.2",
+    "semantic-release": "^24.2.0"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
